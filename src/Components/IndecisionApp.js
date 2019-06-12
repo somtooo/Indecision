@@ -3,6 +3,7 @@ import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
 import AddOption from "./AddOption";
+import OptionModal from "./OptionModal"
 
 export default class IndecisionApp extends React.Component{
     constructor(props){
@@ -12,7 +13,8 @@ export default class IndecisionApp extends React.Component{
         this.handleAddOption = this.handleAddOption.bind(this)
         this.handleDeleteOption = this.handleDeleteOption.bind(this)
         this.state={
-            options:props.options
+            options:[],
+            selectedOption: undefined
         }
     }
     componentDidMount(){
@@ -76,11 +78,9 @@ export default class IndecisionApp extends React.Component{
                 <Action hasOptions={this.state.options.length > 0} handlePick = {this.handlePick} />
                 <Options array = {this.state.options} handleDeleteOptions = {this.handleDeleteOptions} handleDeleteOption = {this.handleDeleteOption}/>
                 <AddOption handleAddOption = {this.handleAddOption}/>
+                <OptionModal/>
             </div>
         )
     }
 }
 
-IndecisionApp.defaultProps = {
-    options: []
-}
