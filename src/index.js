@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.scss';
+import 'normalize.css/normalize.css';
 // import App from './App';
 import IndecisionApp from './Components/IndecisionApp'
 import * as serviceWorker from './serviceWorker';

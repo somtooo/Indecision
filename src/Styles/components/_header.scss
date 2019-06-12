@@ -1,12 +1,19 @@
 .header{
-  background: #20222b;
+  background: $off-black;
   color: white;
-  margin-bottom: 4.8rem;
-  padding: 1.6rem 0;
+  margin-bottom: $xl-size;
+  padding: $m-size 0;
 }
 
 .header__title{
-  font-size: 3.2rem;
+  font-size: $l-sie;
   margin: 0;
 
+}
+
+.header__subtitle {
+  color: $off-white;
+  font-size: $m-size;
+  font-weight: 500;
+  margin: 0;
 }
