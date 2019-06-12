@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Styles/index.scss';
 // import App from './App';
 import IndecisionApp from './Components/IndecisionApp'
 import * as serviceWorker from './serviceWorker';

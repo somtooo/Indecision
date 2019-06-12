@@ -8,6 +8,7 @@ import OptionModal from "./OptionModal"
 export default class IndecisionApp extends React.Component{
     constructor(props){
         super(props)
+        this.handleModalClose = this.handleModalClose.bind(this)
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
         this.handlePick = this.handlePick.bind(this)
         this.handleAddOption = this.handleAddOption.bind(this)
@@ -44,6 +45,12 @@ export default class IndecisionApp extends React.Component{
         console.log("fjff")
     }
 
+    handleModalClose(){
+        this.setState(()=>({
+            selectedOption:undefined
+        }))
+    }
+
     handleDeleteOption(option) {
         this.setState((prevState) => ({
             options: prevState.options.filter((word) => !(word === option))
@@ -62,7 +69,11 @@ export default class IndecisionApp extends React.Component{
 
     handlePick(){
         const randomNum = Math.floor(Math.random() * this.state.options.length)
-        return alert(this.state.options[randomNum])
+        this.setState(()=>({
+            selectedOption: this.state.options[randomNum]
+        }))
+
+
     }
 
     handleDeleteOptions(){
@@ -78,7 +89,7 @@ export default class IndecisionApp extends React.Component{
                 <Action hasOptions={this.state.options.length > 0} handlePick = {this.handlePick} />
                 <Options array = {this.state.options} handleDeleteOptions = {this.handleDeleteOptions} handleDeleteOption = {this.handleDeleteOption}/>
                 <AddOption handleAddOption = {this.handleAddOption}/>
-                <OptionModal/>
+                <OptionModal selectedOption = {this.state.selectedOption} handleModalClose = {this.handleModalClose}/>
             </div>
         )
     }
