@@ -1,0 +1,36 @@
+.option{
+  border-bottom: 1px solid lighten($light-blue,10%);
+  display: flex;
+  justify-content: space-between;
+  padding: $l-sie $m-size;
+}
+
+.option__text{
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
+  word-break: break-all;
+
+}
+
+.add-option{
+  display: flex;
+  padding: $m-size;
+}
+.add-option-error{
+  color: $off-white;
+  font-style: italic;
+  margin: $m-size 0 0 0;
+  padding: 0 $m-size;
+}
+
+.add-option__input{
+  border: none;
+  border-bottom: .3rem solid darken($dark-blue,10%);
+  color: $off-white;
+  background: $dark-blue;
+  flex-grow: 1;
+  margin-right: $s-size;
+  padding: $s-size;
+}
